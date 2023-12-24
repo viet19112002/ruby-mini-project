@@ -9,7 +9,7 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def show
-     posts = Post.find_by(:id => params[:id])
+     posts = Post.find_by(id: params[:id])
       if posts
         render json: posts, status: 200
       else
@@ -35,7 +35,7 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def update
-    posts = Post.find_by(:id => params[:id])
+    posts = Post.find_by(id: params[:id])
     if posts
       posts.update(title: params[:title], body: params[:body], author: params[:author])
       render json: "Article updated successfully."
@@ -48,7 +48,7 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def destory
-    posts = post.find_by(:id => params[:id])
+    posts = post.find_by(id: params[:id])
     if posts
       posts.destory
       render json: "Article deleted successfully."

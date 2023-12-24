@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'post/index'
   namespace :api do
     namespace :v1 do
       resources :posts, only: [:index, :show , :create, :destroy, :update]
