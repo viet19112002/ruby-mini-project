@@ -14,7 +14,7 @@ default: &default
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password:
+  password: 12345
   host: localhost
 
 development:
@@ -51,5 +51,5 @@ test:
 production:
   <<: *default
   database: ruby_production
-  username: ruby
+  username: root
   password: <%= ENV["RUBY_DATABASE_PASSWORD"] %>
